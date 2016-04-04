@@ -1,4 +1,8 @@
 export class TwitterApplicationComponent implements ng.IComponentOptions{
+    public $routeConfig = [
+      		{ path: '/about', component: 'pageAbout', name: 'About' },
+          { path: '/', component: 'pageTweets', name: 'Tweets' }
+    ]
     public template: string = `
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
@@ -19,5 +23,5 @@ export class TwitterApplicationComponent implements ng.IComponentOptions{
                 </div>
             </div>
         </nav>
-        <div ng-view></div>`;
+        <ng-outlet></ng-outlet>`;
 }
