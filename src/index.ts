@@ -1,8 +1,8 @@
-import "./modules/application/angular/index";
-import "./modules/tweets/angular/index";
-import "./modules/about/angular/index";
+// import "./modules/application/angular/index";
+// import "./modules/tweets/angular/index";
+// import "./modules/about/angular/index";
 
-import "./modules/main/index";
+import "./components/main";
 import "angular";
 import '@angular/router/angular1/angular_1_router.js';
 
