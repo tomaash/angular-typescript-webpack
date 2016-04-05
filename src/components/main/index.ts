@@ -6,8 +6,6 @@ import './components/absence';
 import './components/goal';
 import './components/security';
 
-import './components/bar/BarComponent';
-
 angular.module('app.main', [
   'app.main.people',
   'app.main.absence',
