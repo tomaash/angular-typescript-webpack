@@ -5,3 +5,14 @@ typings
 out
 typings
 .idea/
+
+**/webpack-stats.json
+logs
+coverage
+lcov.info
+.tmp
+.DS_Store
+.sass-cache
+.env
+.c9npm-debug.log
+npm-debug*
