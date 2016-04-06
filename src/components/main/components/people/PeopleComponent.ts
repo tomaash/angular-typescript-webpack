@@ -6,11 +6,9 @@ export class PeopleComponent implements ng.IComponentOptions {
 
   public template: string = `
     <h1>People</h1>
-    <div>
-      <ul>
-        <li><a ng-link="['Me']">Me</a></li>
-        <li><a ng-link="['Team']">Team</a></li>
-      </ul>
+    <div class="btn-group" role="group" aria-label="...">
+      <a class="btn btn-default" ng-link="['Me']">Me</a>
+      <a class="btn btn-default" ng-link="['Team']">Team</a>
     </div>
     <ng-outlet></ng-outlet>
   `
