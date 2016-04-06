@@ -1,6 +1,6 @@
 export class PeopleComponent implements ng.IComponentOptions {
   public $routeConfig = [
-    { path: '/me', component: 'meComponent', name: 'Me', useAsDefault: true },
+    { path: '/me/...', component: 'meComponent', name: 'Me', useAsDefault: true },
     { path: '/team', component: 'teamComponent', name: 'Team' }
   ]
 
