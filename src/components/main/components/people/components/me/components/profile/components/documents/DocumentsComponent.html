@@ -1,0 +1,29 @@
+<h1>Documents</h1>
+
+<!--<div class="btn-group" role="group">
+  <button ng-repeat="filterType in $ctrl.filterTypes track by $index" class="btn btn-default" ng-click="$ctrl.changeFilter(filterType)">{{filterType}}</button>
+</div>-->
+
+<div class="btn-group" role="group">
+  <a
+    ng-repeat="filterType in $ctrl.filterTypes track by $index"
+    class="btn btn-default"
+    ng-link="['Documents', {filter: filterType }]">{{filterType}}</a>
+</div>
+
+<p> Showing just <b>{{$ctrl.filter}}</b> documents </p>
+
+<!--width="300" flex-grow="2"-->
+<dtable options="$ctrl.options" rows="$ctrl.data" class="material dt">
+  <column name="Title" prop="title"></column>
+  <column name="Created by" prop="createdBy" ></column>
+  <column name="Modified by" prop="modifiedBy"></column>
+  <column name="Created date" prop="createdDate"></column>
+  <column name="Modified date" prop="modifiedDate"></column>
+</dtable>
+
+  <!--<column name="Gender">
+    <strong>{{$row.name}}</strong>: {{$cell}}
+  </column>-->
+
+<!--{ title: 'Job Application', createdBy: 'Test', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/2/2") },-->
