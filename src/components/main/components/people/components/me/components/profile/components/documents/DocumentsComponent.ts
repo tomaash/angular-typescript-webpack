@@ -1,3 +1,5 @@
+import {documentsFixture} from './documentsFixture';
+
 export class DocumentsComponent implements ng.IComponentOptions {
   public controller: Function = DocumentsController;
   public template: string = require('./DocumentsComponent.html');
@@ -20,70 +22,11 @@ export class DocumentsController {
     ];
 
   public options = {
-    scrollbarV: false
+    scrollbarV: false,
+    sortType: 'single'
   };
 
-  public documents = {
-    Application: [
-      { title: 'Job Application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Foo', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    Contracts: [
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Contracting job application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Bar', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    References: [
-      { title: 'Referenced by Application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Baz', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    Certificates: [
-      { title: 'Certificate Application', createdBy: 'Jake', modifiedBy: 'Quux', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    Reviews: [
-      { title: 'Review Job Application', createdBy: 'Jake', modifiedBy: 'Spam', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    Notices: [
-      { title: 'Notice Job Application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Ham', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    Others: [
-      { title: 'Other Job Application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Eggs', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-
-  }
+  public documents = documentsFixture;
 
   public data;
 
