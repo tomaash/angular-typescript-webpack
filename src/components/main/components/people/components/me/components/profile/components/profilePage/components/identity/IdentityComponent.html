@@ -1,0 +1,14 @@
+<h1>Identity</h1>
+<div class="row">
+  <div class="col-md-6 col-sm-8">
+    <form
+      name="ngform"
+      sf-schema="$ctrl.schema"
+      sf-form="$ctrl.form"
+      sf-model="$ctrl.model"
+      ng-submit="$ctrl.submitForm(ngform, $ctrl.model)">
+    </form>
+    <div ng-show="ngform.$valid"><em>Form is valid</em></div>
+    <div ng-show="ngform.$invalid"><em>Form is not valid</em></div>
+  </div>
+</div>

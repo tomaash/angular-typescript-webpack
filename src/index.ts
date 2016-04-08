@@ -12,6 +12,10 @@ import 'angular-data-table/release/dataTable.css';
 import 'angular-data-table/release/material.css';
 import './styles/icons.css';
 
+// JSON Schema form
+import 'angular-schema-form';
+import 'angular-schema-form-bootstrap';
+
 // load our default (non specific) css
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -19,7 +23,7 @@ import './styles/screen.scss';
 
 // , "app.application", "app.tweets", "app.about"
 
-angular.module('app', ['ngComponentRouter', 'data-table', 'app.main']);
+angular.module('app', ['ngComponentRouter', 'data-table', 'schemaForm', 'app.main']);
 angular.bootstrap(document, ['app'], {
     strictDi: true
 });
