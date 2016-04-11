@@ -20,6 +20,8 @@ import 'angular-schema-form-bootstrap';
 import 'angular-formly';
 import 'angular-formly-templates-bootstrap';
 import {formlyConfig} from './components/formly/formly-config';
+import {formlyRun} from './components/formly/formly-run';
+import 'angular-messages';
 
 // Angular UI
 import 'angular-ui-bootstrap';
@@ -28,11 +30,13 @@ import 'angular-ui-bootstrap';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/screen.scss';
+import './styles/forms.scss';
 
 // , "app.application", "app.tweets", "app.about"
 
 var app = angular.module('app', [
     'ngComponentRouter',
+    'ngMessages',
     'formly',
     'formlyBootstrap',
     'ui.bootstrap',
@@ -42,6 +46,8 @@ var app = angular.module('app', [
     ]);
 
 app.config(formlyConfig);
+
+app.run(formlyRun);
 
 angular.bootstrap(document, ['app'], {
     strictDi: true

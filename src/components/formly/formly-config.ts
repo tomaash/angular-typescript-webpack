@@ -65,6 +65,12 @@ export var formlyConfig = ['formlyConfigProvider', function config(formlyConfigP
         }]
     });
 
+    formlyConfigProvider.setWrapper({
+      name: 'validation',
+      types: ['input'],
+      template: require('./error-messages.html')
+    });
+
     function camelize(string) {
         string = string.replace(/[\-_\s]+(.)?/g, function(match, chr) {
             return chr ? chr.toUpperCase() : '';
