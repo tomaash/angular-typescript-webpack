@@ -16,6 +16,14 @@ import './styles/icons.css';
 import 'angular-schema-form';
 import 'angular-schema-form-bootstrap';
 
+// Formly
+import 'angular-formly';
+import 'angular-formly-templates-bootstrap';
+import {formlyConfig} from './components/formly/formly-config';
+
+// Angular UI
+import 'angular-ui-bootstrap';
+
 // load our default (non specific) css
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -23,7 +31,18 @@ import './styles/screen.scss';
 
 // , "app.application", "app.tweets", "app.about"
 
-angular.module('app', ['ngComponentRouter', 'data-table', 'schemaForm', 'app.main']);
+var app = angular.module('app', [
+    'ngComponentRouter',
+    'formly',
+    'formlyBootstrap',
+    'ui.bootstrap',
+    'data-table',
+    'schemaForm',
+    'app.main'
+    ]);
+
+app.config(formlyConfig);
+
 angular.bootstrap(document, ['app'], {
     strictDi: true
 });
