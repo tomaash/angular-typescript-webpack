@@ -67,7 +67,7 @@ export var formlyConfig = ['formlyConfigProvider', function config(formlyConfigP
 
     formlyConfigProvider.setWrapper({
       name: 'validation',
-      types: ['input'],
+      types: ['input', 'select', 'datepicker'],
       template: require('./error-messages.html')
     });
 
