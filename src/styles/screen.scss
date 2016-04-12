@@ -2,6 +2,13 @@ body{
   margin-top: 50px;
 }
 
+.footer {
+  min-height: 50px;
+  background-color: #101010;
+  margin-top: 24px;
+  padding: 16px;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }

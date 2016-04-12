@@ -31,6 +31,7 @@ import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/screen.scss';
 import './styles/forms.scss';
+import './styles/main.scss';
 
 // , "app.application", "app.tweets", "app.about"
 

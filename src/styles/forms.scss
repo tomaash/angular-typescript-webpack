@@ -2,9 +2,20 @@
   margin-bottom: 16px;
 }
 
+.row > .formly-field {
+  margin-bottom: -48px;
+}
+
 .validation {
   color: #a94442;
   // margin-top: -15px;
   margin-bottom: 15px;
   font-size: 11px;
+}
+
+.form-section-label {
+  font-size: 200%;
+  margin-left: 16px;
+  margin-bottom: 0;
+  margin-top: 32px;
 }

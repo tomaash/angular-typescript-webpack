@@ -2,11 +2,16 @@
 <div class="row">
   <div class="col-md-6 col-sm-8">
     <form ng-submit="$ctrl.onSubmit()" name="formlyForm" novalidate>
-      <formly-form model="$ctrl.model" fields="$ctrl.fields" options="$ctrl.options" form="formlyForm">
-        <!--ng-disabled="formlyForm.$invalid"-->
-        <button type="submit" class="btn btn-primary submit-button">Submit</button>
-        <button type="button" class="btn btn-default" ng-click="$ctrl.options.resetModel()">Reset</button>
-      </formly-form>
+      <div class="row">
+        <formly-form model="$ctrl.model" fields="$ctrl.fields" options="$ctrl.options" form="formlyForm">
+          <!--ng-disabled="formlyForm.$invalid"-->
+          <br/>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-primary submit-button">Submit</button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.options.resetModel()">Reset</button>
+          </div>
+        </formly-form>
+      </div>
     </form>
   </div>
 </div>
