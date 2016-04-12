@@ -1,14 +1,16 @@
-<h1>Identity</h1>
 <div class="row">
   <div class="col-md-6 col-sm-8">
-    <form
-      name="ngform"
-      sf-schema="$ctrl.schema"
-      sf-form="$ctrl.form"
-      sf-model="$ctrl.model"
-      ng-submit="$ctrl.submitForm(ngform, $ctrl.model)">
+    <form ng-submit="$ctrl.onSubmit()" name="formlyForm" novalidate>
+      <div class="row">
+        <formly-form model="$ctrl.model" fields="$ctrl.fields" options="$ctrl.options" form="formlyForm">
+          <!--ng-disabled="formlyForm.$invalid"-->
+          <br/>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-primary submit-button">Submit</button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.options.resetModel()">Reset</button>
+          </div>
+        </formly-form>
+      </div>
     </form>
-    <div ng-show="ngform.$valid"><em>Form is valid</em></div>
-    <div ng-show="ngform.$invalid"><em>Form is not valid</em></div>
   </div>
 </div>

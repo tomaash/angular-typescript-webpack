@@ -12,10 +12,6 @@ import 'angular-data-table/release/dataTable.css';
 import 'angular-data-table/release/material.css';
 import './styles/icons.css';
 
-// JSON Schema form
-import 'angular-schema-form';
-import 'angular-schema-form-bootstrap';
-
 // Formly
 import 'angular-formly';
 import 'angular-formly-templates-bootstrap';
@@ -42,7 +38,6 @@ var app = angular.module('app', [
     'formlyBootstrap',
     'ui.bootstrap',
     'data-table',
-    'schemaForm',
     'app.main'
     ]);
 
