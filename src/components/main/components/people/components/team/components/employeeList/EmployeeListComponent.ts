@@ -1,11 +1,11 @@
-import {documentsFixture} from './documentsFixture';
+import {employeesFixture} from './employeesFixture';
 
-export class DocumentsComponent implements ng.IComponentOptions {
-  public controller: Function = DocumentsController;
-  public template: string = require('./DocumentsComponent.html');
+export class EmployeeListComponent implements ng.IComponentOptions {
+  public controller: Function = EmployeeListController;
+  public template: string = require('./EmployeeListComponent.html');
 }
 
-export class DocumentsController {
+export class EmployeeListController {
   // public route: ng.route.IRouteService;
   // public userInput: string;
   public filter: string;
@@ -26,9 +26,23 @@ export class DocumentsController {
     sortType: 'single'
   };
 
-  public documents = documentsFixture;
+  public employees = employeesFixture;
 
   public data;
+
+  public employeeListType: string;
+  public pageTitle: string;
+  public filterGroup: string;
+
+  public pageTitles = {
+    status: "Status",
+    employeeType: "Employee Type"
+  }
+
+  public filterGroups = {
+    status: ['active', 'offboarding', 'onboarding', 'terminated'],
+    employeeType: ['employee', 'student', 'consultant']
+  }
 
   constructor(
     // public $location: ng.ILocationService
@@ -46,18 +60,26 @@ export class DocumentsController {
     // console.log('did run $routerOnActivate');
     // Load up the heroes for this view
     // console.log(next);
-    this.filter = next.params.filter;
-    this.data = this.documents[this.filter];
+    // this.filter = next.params.filter;
+    // this.data = this.employees[this.filter];
     // console.log(this);
+    this.setupComponent(next);
   };
 
+  public setupComponent(route) {
+    this.employeeListType = route.urlPath;
+    this.pageTitle = this.pageTitles[this.employeeListType];
+    this.filterGroup = this.filterGroups[this.employeeListType];
+  }
+
   public $routerOnReuse(newRoute, oldRoute) {
-    console.log('This will be called twice');
+    // console.log('This will be called twice');
     if (newRoute.urlPath != oldRoute.urlPath) {
-      console.log('This will be called only once once');
+      // console.log('This will be called only once once');
+      this.setupComponent(newRoute);
     }
-    this.filter = newRoute.params.filter;
-    this.data = this.documents[this.filter];
+    // this.filter = newRoute.params.filter;
+    // this.data = this.employees[this.filter];
   }
 
   public $routerCanReuse() {
@@ -66,7 +88,7 @@ export class DocumentsController {
 
   public changeFilter(val): void {
     // this.filter = val;
-    // this.data = this.documents[val];
+    // this.data = this.employees[val];
     // this.$location.search({"filter" : val});
   }
 
