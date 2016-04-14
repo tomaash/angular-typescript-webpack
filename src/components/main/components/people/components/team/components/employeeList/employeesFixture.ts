@@ -1,60 +1,48 @@
 export var employeesFixture = {
-    Application: [
-      { title: 'Job Application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Foo', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
+  status: {
+    active: [
+      { fullName: "Francesca Grech", team: "Exigy Ltd.", jobRole: "Executive Director", employeeType: "Employee", status: "Active", alerts: "2" },
+      { fullName: "John Aoe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Employee", status: "Off Boarding", alerts: "2" }
     ],
-    Contracts: [
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Contracting job application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Bar', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
+    onboarding: [
+      { fullName: "Francesca Grech", team: "Exigy Ltd.", jobRole: "Executive Director", employeeType: "Employee", status: "Active", alerts: "2" },
+      { fullName: "John Boe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Student", status: "Off Boarding", alerts: "2" }
+
     ],
-    References: [
-      { title: 'Referenced by Application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Baz', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
+    offboarding: [
+      { fullName: "Francesca Grech", team: "Exigy Ltd.", jobRole: "Executive Director", employeeType: "Employee", status: "Active", alerts: "2" },
+      { fullName: "John Coe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Consultant", status: "Off Boarding", alerts: "2" }
+
     ],
-    Certificates: [
-      { title: 'Certificate Application', createdBy: 'Jake', modifiedBy: 'Quux', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    Reviews: [
-      { title: 'Review Job Application', createdBy: 'Jake', modifiedBy: 'Spam', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    Notices: [
-      { title: 'Notice Job Application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Ham', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
-    ],
-    Others: [
-      { title: 'Other Job Application', createdBy: 'Jake', modifiedBy: 'Test', createdDate: new Date("2015/1/1"), modifiedDate: new Date("2015/3/2") },
-      { title: 'New Contract', createdBy: 'Zorro', modifiedBy: 'Test', createdDate: new Date("2015/2/1"), modifiedDate: new Date("2015/9/2") },
-      { title: 'Referred by someone', createdBy: 'Martin', modifiedBy: 'Test', createdDate: new Date("2015/3/1"), modifiedDate: new Date("2015/5/2") },
-      { title: 'Skill level up', createdBy: 'Garry', modifiedBy: 'Test', createdDate: new Date("2015/4/1"), modifiedDate: new Date("2015/1/2") },
-      { title: 'Well done on this', createdBy: 'Augusto', modifiedBy: 'Eggs', createdDate: new Date("2015/6/1"), modifiedDate: new Date("2015/8/9") },
-      { title: 'Keep in mind', createdBy: 'Augusto', modifiedBy: 'Test', createdDate: new Date("2015/7/1"), modifiedDate: new Date("2015/8/1") },
+    terminated: [
+      { fullName: "Francesca Grech", team: "Exigy Ltd.", jobRole: "Executive Director", employeeType: "Employee", status: "Active", alerts: "2" },
+      { fullName: "John Doe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Employee", status: "Off Boarding", alerts: "2" }
     ]
-  };
+  },
+  employeeType: {
+    employee: [
+      { fullName: "Francesca Grech", team: "Exigy Ltd.", jobRole: "Executive Director", employeeType: "Employee", status: "Active", alerts: "2" },
+      { fullName: "Matin Doe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Employee", status: "Off Boarding", alerts: "2" }
+
+    ],
+    student: [
+      { fullName: "Francesca Grech", team: "Exigy Ltd.", jobRole: "Executive Director", employeeType: "Employee", status: "Active", alerts: "2" },
+      { fullName: "Richard Doe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Student", status: "Off Boarding", alerts: "2" }
+
+    ],
+    consultant: [
+      { fullName: "Francesca Grech", team: "Exigy Ltd.", jobRole: "Executive Director", employeeType: "Employee", status: "Active", alerts: "2" },
+      { fullName: "Norman Doe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Consultant", status: "Off Boarding", alerts: "2" }
+    ]
+  },
+  all: [
+    { fullName: "Francesca Grech", team: "Exigy Ltd.", jobRole: "Executive Director", employeeType: "Employee", status: "Active", alerts: "2" },
+    { fullName: "Matin Doe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Employee", status: "Off Boarding", alerts: "2" },
+    { fullName: "Richard Doe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Employee", status: "Off Boarding", alerts: "2" },
+    { fullName: "John Aoe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Employee", status: "Off Boarding", alerts: "2" },
+    { fullName: "John Boe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Student", status: "Off Boarding", alerts: "2" },
+    { fullName: "John Coe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Employee", status: "Off Boarding", alerts: "2" },
+    { fullName: "John Doe", team: "Doe Ltd.", jobRole: "Developer", employeeType: "Employee", status: "Off Boarding", alerts: "2" }
+  ]
+};
+

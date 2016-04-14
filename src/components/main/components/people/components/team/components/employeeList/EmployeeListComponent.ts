@@ -21,9 +21,19 @@ export class EmployeeListController {
     'Others'
     ];
 
+  public allColumns = [
+    { name: 'Full Name', prop: 'fullName'},
+    { name: 'Team', prop: 'team'},
+    { name: 'Job Role', prop: 'jobRole' },
+    { name: 'Status', prop: 'status' },
+    { name: 'Employee Type', prop: 'employeeType' },
+    { name: 'Alerts', prop: 'alerts' }
+  ]
+
   public options = {
     scrollbarV: false,
-    sortType: 'single'
+    sortType: 'single',
+    columns: this.allColumns
   };
 
   public employees = employeesFixture;
@@ -57,29 +67,28 @@ export class EmployeeListController {
   }
 
   public $routerOnActivate(next) {
-    // console.log('did run $routerOnActivate');
-    // Load up the heroes for this view
-    // console.log(next);
-    // this.filter = next.params.filter;
-    // this.data = this.employees[this.filter];
-    // console.log(this);
     this.setupComponent(next);
   };
 
   public setupComponent(route) {
-    this.employeeListType = route.urlPath;
+    this.employeeListType = route.params.group;
+    this.filter = route.params.filter;
     this.pageTitle = this.pageTitles[this.employeeListType];
     this.filterGroup = this.filterGroups[this.employeeListType];
+    if (this.employeeListType) {
+      // When filtering by list type, exclude it from columns
+      this.options.columns = this.allColumns.filter((x) => x.prop != this.employeeListType);
+      this.data = employeesFixture[this.employeeListType][this.filter];
+    } else {
+      this.data = employeesFixture.all;
+      this.options.columns = this.allColumns
+    }
   }
 
   public $routerOnReuse(newRoute, oldRoute) {
-    // console.log('This will be called twice');
     if (newRoute.urlPath != oldRoute.urlPath) {
-      // console.log('This will be called only once once');
       this.setupComponent(newRoute);
     }
-    // this.filter = newRoute.params.filter;
-    // this.data = this.employees[this.filter];
   }
 
   public $routerCanReuse() {
