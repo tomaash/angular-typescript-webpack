@@ -2,7 +2,8 @@ export class ProfileComponent implements ng.IComponentOptions {
   public $routeConfig = [
     { path: '/overview', component: 'overviewComponent', name: 'Overview', useAsDefault: true },
     { path: '/profile/...', component: 'profilePageComponent', name: 'ProfilePage' },
-    { path: '/documents/:filter', component: 'documentsComponent', name: 'Documents' }
+    { path: '/documents/:filter', component: 'documentsComponent', name: 'Documents' },
+    { path: '/documents/:filter/:detail', component: 'documentsComponent', name: 'DocumentDetail' }
   ]
 
   public template: string = `
